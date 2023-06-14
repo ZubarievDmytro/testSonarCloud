@@ -1,0 +1,29 @@
+{
+  "name": "test.ui",
+  "private": true,
+  "scripts": {
+    "clean": "yarn clean:games & yarn clean:core && rimraf node_modules",
+    "clean:games": "rimraf \"games/**/node_modules\" \"games/**/coverage\" \"games/**/dist\" \"games/**/docs\"",
+    "clean:core": "rimraf \"core/**/node_modules\" \"core/**/coverage\" \"core/**/dist\" \"core/**/docs\"",
+    "reset": "rimraf package-lock.json yarn.lock && yarn run clean",
+    "check-typings": "lerna run check-typings --stream --concurrency 4",
+   
+    "build": "lerna run build --stream",
+    "build:baccarat": "yarn build --scope=@test/baccarat",
+    "build:blackjack": "yarn build --scope=@test/blackjack",
+   
+   
+    "start": "lerna run start --stream",
+    "start:baccarat": "yarn start --scope=@test/baccarat",
+    "start:blackjack": "yarn start --scope=@test/blackjack"
+  },
+  "engines": {
+    "node": ">=14",
+    "npm": ">=7"
+  },
+  "workspaces": [
+    "core/*",
+    "games/*"
+  ],
+  "packageManager": "yarn@3.2.1"
+}
