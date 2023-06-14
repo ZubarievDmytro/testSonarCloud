@@ -2,6 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const a = 0;
+  if (a == 1) return null;
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +20,7 @@ function App() {
         >
           Learn React Baccarat
         </a>
+
       </header>
     </div>
   );
